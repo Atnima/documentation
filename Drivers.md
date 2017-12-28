@@ -1,4 +1,21 @@
+# SVHA Drivers
 
+## 1.0 Driver Packaging
+
+Driver packaging is accomplished using a custom powershell script designed to package up a folder of drivers into a single EXE file to be applied during an OSD.
+
+This approach is used for a few key reasons. Primarily, while there is an inbuilt drivers and driver package function within SCCM, it lacks the ability to update drivers easily and in a silo'd fashion. If SCCM detects an updated driver applies to another model, it will update it there, making testing difficult.
+
+### Pre-requisites
+In order to package drivers in the above method, the following is required:  
+* Inno Setup
+* New-EXEDriverPackage Module
+
+### Instructions
+
+
+
+## 2.0 Packaged Drivers
 Windows | Manufacturer | Model | Generation | Driver Pack | Driver Date 
 :---: | :---: | :---: | :---: | :---: | :---: |
 Windows 10 | 
