@@ -25,6 +25,7 @@ Windows 10 |
 | | | EliteBook 840 | G3 | sp80892 | 2017-06-23
 | | | EliteBook 650 | G3 | sp80490 | 2017-05-23
 Windows 7 |
+| | Hewlett-Packard | 8300 Elite SFF | - | sp61385 | 2013-04-03
 | | Hewlett-Packard | EliteDesk 800 | G1 | sp69540 | 2014-10-19
 |  |  |  | G2 | sp80307 | 2017-05-31
 |  |  |  | G3 | sp80510 | 2017-06-15
