@@ -9,10 +9,12 @@ This release was intended to fully update the Windows 7 image in use for a numbe
 - Office was presenting the user with an "unlicenced" prompt when attempting to use any Office product for the first time.
 - Builds were taking much longer than acceptable
 - The password scrambler was not working and the local admin password was not known
+- Updated Firmware and Drivers to latest MSFT supplied MSI's as at 20/01/2018
 
 High Performance Power Management has been added to both the Windows 10 and Windows 7 builds to improve build times. Reports indicate builds can be up to 40% faster using this method. The sequence activates High Performance settings after any system reset and sets the defaults (balanced) at the end of the sequence. Benchmarking on SVHA devices has not been completed.
 
-
+### 4.1.13
+- Added monitor timeout fix to prevent the screen going to sleep during OSD.
 
 ### 4.1.12
 - Moved password scrambler to after the second reboot for Windows 7 - the thinking is that it isnt setting or is reverting due to it being the first boot into windows.
