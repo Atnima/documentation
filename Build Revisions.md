@@ -4,17 +4,24 @@ This will act as a changelog for the "OSD - Deploy - SVHA Builds x.x.xx" task se
 
 ## Major Version 4.1
 This release was intended to fully update the Windows 7 image in use for a number of reasons:
-- Updates were not complete, while somewhat patched there were critical patches missing
+- Updates were not complete, while somewhat patched there were critical patches missing that were being resolved once picked up in SCCM
 - Language and Region settings were not correct
 - Office was presenting the user with an "unlicenced" prompt when attempting to use any Office product for the first time.
-- Builds were taking much longer than acceptable
-- The password scrambler was not working and the local admin password was not known
+- The password scrambler was not working in Windows 7 and the local admin password was not known
 - Updated Firmware and Drivers to latest MSFT supplied MSI's as at 20/01/2018
 
 High Performance Power Management has been added to both the Windows 10 and Windows 7 builds to improve build times. Reports indicate builds can be up to 40% faster using this method. The sequence activates High Performance settings after any system reset and sets the defaults (balanced) at the end of the sequence. Benchmarking on SVHA devices has not been completed.
 
+#### *Known Issues*
+- Surface Pro devices that are not running the latest firmware on the device itself or the dock, may have no network connectivity on completion of the build. This is due to the firmware upgrade process that needs to run over a number of reboots. A reboot should resolve the issue.
+- Password scrambler isnt working for Windows 7, the root cause is unknown and until it can be resolved we will continue to use the existing SVMHS local administrator password.
+
+### 4.1.14
+- Release Candidate 1
+
 ### 4.1.13
 - Added monitor timeout fix to prevent the screen going to sleep during OSD.
+- Removed password scrambler for Windows 7 for now - using existing static local admin password.
 
 ### 4.1.12
 - Moved password scrambler to after the second reboot for Windows 7 - the thinking is that it isnt setting or is reverting due to it being the first boot into windows.
