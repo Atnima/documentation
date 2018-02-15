@@ -16,6 +16,17 @@ High Performance Power Management has been added to both the Windows 10 and Wind
 - Surface Pro devices that are not running the latest firmware on the device itself or the dock, may have no network connectivity on completion of the build. This is due to the firmware upgrade process that needs to run over a number of reboots. A reboot should resolve the issue.
 - Password scrambler isnt working for Windows 7, the root cause is unknown and until it can be resolved we will continue to use the existing SVMHS local administrator password.
 
+### 4.1.17
+- Release Version
+
+### 4.1.16
+- Added log collection in for failed task sequences
+- Modified critical driver application in Win7 to apply using DISM with the recurse tag to resolve error
+- Added restart for Windows 7 post unattend application reboot due to sporadic issue with RPC server being unavailable
+
+### 4.1.15
+- Attempted to move driver application step to resolve issue in NSW where the device was failig to apply critical network and storage (win7)
+
 ### 4.1.14
 - Release Candidate 1
 

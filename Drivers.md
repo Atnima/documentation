@@ -38,6 +38,7 @@ Windows 7 |
 |  |  |  | G2 | sp70143^ | 2014-12-17
 |  |  |  | G3 | sp80893^ | 2017-06-23
 | | | EliteBook 850 | G2 | sp70143^ | 2014-12-17
+| | | z240 Workstation | - | sp82547 | 2017-11-14
 
 *Italics indicate the drivers are for an earlier version of windows.*  
 **Bold indicates the driver pack is used for other models**  
