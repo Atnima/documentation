@@ -5,9 +5,9 @@ This is a minor update focussed on correcting issues identified in the SVMHS bui
 **New Feature:** Automated log upload <br>
 To assist in root cause analysis of any future issues, the task sequence will now automatically upload certain logs in the event the task sequence fails.
 
+**Fixes**
 - Fixed an issue where SVMHS builds would fail applying critical network drivers.
 - Fixed an issue where device specific drivers would fail in the SVMHS build citing an RPC unavailable error.
-- Added automated log upload in case of a failed task sequence.
 
 # Release Notes - 4.1.x (.14 - RC1)
 
