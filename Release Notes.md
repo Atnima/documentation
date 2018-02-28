@@ -1,3 +1,39 @@
+# Minor Update - 4.2.1
+Minor update including fixes for the 800 G2 and incomplete build notification.
+
+**Fixes** 
+- Fixed an issue where 800 G2 devices were not initialising fast enough on first boot to Windows causing the build to fail
+- Fixed an issue where the Incomplete Build Notification wasn't showing after the WinPE volume is removed
+
+*Please Note - The 800G2 issue appears to be isolated to this particular model and in this instance was caused by a significant delay in components initialising after the first boot to Windows. While I believe this fix should resolve the issue, please report any issues you have with builds as soon as possible.*
+
+
+# Major Update - 4.2.x (.0)
+
+This is a major update focussed on a release of the Windows 10 Fall Creators Update, fixes for some issues occuring sporadically during builds, an incomplete build notification screen and a redesign of the automated log upload system.
+
+**New Feature:** Windows 10 - The Fall Creators Update <br>
+Windows 10 version 1709 will now be the default for all future Windows 10 MOE builds.
+
+**New Feature:** Incomplete Build Notification <br>
+To improve visibility when a build fails, a custom script will now display on screen until dismissed, preventing the task sequence from rebooting into Windows making it hard to see at a glance whether it completed.
+
+**New Feature:** Automatic Name Generation <br>
+There is now an option to automatically generate the asset name using the newly agreed standard. If using this option please ensure you only enter the 6 digit IT Tracking Number in the name field and tick the option. This will then generate the name automatically (D###### and N###### for Desktops and Laptops respectively).
+
+**New Feature:** AD Group Migration [BETA]<br>
+A new option to migrate AD groups from the old computer object to the new one has been added. Please note this feature is in testing and while working in isolated lab builds, AD Groups will need to be confirmed as successfully transferred when using on any production devices. Please touch base if you would like any more information.
+
+**Redsigned:** Automated Log Upload
+The automated log upload (released in 4.1.17) has be re-written and improved upon by incorporating it into the incomplete build notification. It will now timestamp the log upload and append the asset ID obtained during the Build UI screen.
+
+**Fixes**
+- Fixed an issue where EliteDesk 800 G2 devices would not build on 1607
+- Fixed an issue where certain devices, when building Windows 10, would fail citing an RPC error
+- Improved EXE driver application to reduce unexpected failures
+- Optimised power management changes during build
+
+
 # Minor Update - 4.1.x (.17)
 
 This is a minor update focussed on correcting issues identified in the SVMHS build and improving the ability for remote troubleshooting.

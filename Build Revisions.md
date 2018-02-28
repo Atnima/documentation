@@ -16,6 +16,18 @@ High Performance Power Management has been added to both the Windows 10 and Wind
 - Surface Pro devices that are not running the latest firmware on the device itself or the dock, may have no network connectivity on completion of the build. This is due to the firmware upgrade process that needs to run over a number of reboots. A reboot should resolve the issue.
 - Password scrambler isnt working for Windows 7, the root cause is unknown and until it can be resolved we will continue to use the existing SVMHS local administrator password.
 
+### 4.1.20
+- Removed failed build HTA
+- Created failed build PS script
+- Improved automatic log handling - added to failed build PS script
+
+### 4.1.19
+- Disabled EXE driver pack for EliteDesk 800 G2 to resolve failing build
+- Added failed TS HTA to improve visibility of a failed build
+
+### 4.1.18
+- Added restart before EXE drivers in Windows 10 to resolve RPC error
+
 ### 4.1.17
 - Release Version
 
