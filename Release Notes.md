@@ -1,3 +1,44 @@
+# Minor Update - 4.3.1
+Minor updates and fixes
+
+**Updates** 
+- To assist in reducing unnecessary file migration USMT Restore will now only migrate user profiles that have been active within 90 days. (Suggested by Brendan - Thank you)
+- Cisco AnyConnect Secure Mobility Client updated to 4.5.04029.
+- Added step to print task sequence version in the log file to assist troubleshooting.
+
+# Major Update - 4.3.0
+
+**New Feature:** SVPHM Application Set <br>
+To provide a single experience across SVHA, SVPHM specific apps that were previously deployed using an alternate sequence have been incorporated into the national build sequence.
+
+In order to build with the SVPHM application included, select Melbourne as the intended time zone on the first page, this will trigger a second page asking whether just the standard National app set is required or if the SVPHM apps should be included.
+
+**New Feature:** USMT Restore [BETA] <br>
+You can now back-up and restore user profiles during the build. This will allow user data from a device to be automatically migrated without the need for manual intervention. <br>
+*IMPORTANT: Please see attached documentation prior to use.*
+
+**Updated Feature:** AD Group Migration [BETA] <br>
+The AD Group Migration feature previously triggered a powershell script that required user input for the existing asset number. This has now been incorporated into the UI for consistency.
+
+**Fixes**
+* Vastly improved PXE boot speed across a number of sites (~88% improvement).
+* The Build UI will now show immediately upon starting the task sequence rather than after hard drive formatting.
+* Fixes for "in-OS" builds (starting the build within Windows).
+* Changes aimed at improving build experience for 800 G2 devices.
+* Added the ability to use the following (in addition to the existing) naming conventions to assist rebuilds of existing devices: <br>
+    * A#####
+    * CPQ##-S###
+    * LT-####
+    * SV_SP##
+    * SV-SP##
+
+*Note: Please use the new naming convention where possible (fill in the 6 digit asset tracking number and tick the "automatic name" box).*
+
+#### Known Issues
+**SVPHM - OU Changes**
+<br>Impact - *Consistent // Low*
+<br>There was a step in the existing SVPHM task sequence that moved it into the SVPHM OU within the SVHA domain. I'm unsure if this was functioning correctly in the existing task sequence but it has been confirmed as not working in the new sequence. I will be recreating this functionality in the future however it was not ready for this release and new objects will need to be moved manually. Apologies for the inconvenience.
+
 # Minor Update - 4.2.1
 Minor update including fixes for the 800 G2 and incomplete build notification.
 
