@@ -1,3 +1,27 @@
+# Major Update - 4.4.0
+
+**New Feature:** Driver application using Deployment Image Servicing and Management
+
+There have been a number of failures reported due to the way drivers are applied during the image. These failures are sporadic and extremely inconsistent. To alleviate the issue, driver application steps have been completely reworked to utilise DISM prior to the first boot into Windows instead of using an EXE package after or the unattend xml to apply drivers.
+
+Given the significant change this introduces, as well as newer drivers, please report any suspected issues as soon as possible.
+
+The new process requires repackaging all drivers. So far the following models have been completed. Any other models will continue to use existing methods.
+
+- Hewlett Packard EliteDesk 800 G1*
+- Hewlett Packard EliteDesk 800 G2
+- Hewlett Packard EliteDesk 800 G3
+- Hewlett Packard Elite X2 1012 G1
+- Hewlett Packard EliteBook x360 1030 G2
+- Hewlett Packard ProBook 650 G3
+
+**New Driver Pack:** Hewlett-Packard ProDesk 600 G3
+
+**Fixes**
+- USMT will now use a Network Access Account if it fails to connect to a State Migration Point
+- Fixed an issue where USMT would fail when non-standard local accounts were present. USMT will now recreate any local accounts and restore data to those accounts. The account will be disabled and will need to be re-enabled and have its password reset prior to use.
+
+
 # Minor Update - 4.3.1
 Minor updates and fixes
 
