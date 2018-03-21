@@ -1,25 +1,49 @@
 # Major Update - 4.4.0
 
-**New Feature:** Driver application using Deployment Image Servicing and Management
+**New Feature:** Driver application using Deployment Image Servicing and Management <br>
+>There have been a number of failures reported due to the way drivers are applied during the image. These failures are sporadic and extremely inconsistent. To alleviate the issue, driver application steps have been completely reworked to utilise DISM prior to the first boot into Windows instead of using an EXE package or the unattend xml to apply drivers.<br><br>Given the significant change this introduces, as well as newer driver versions, please report any suspected issues as soon as possible. SVMHS Windows 7 Builds will continue to use the existing process until a future release.
 
-There have been a number of failures reported due to the way drivers are applied during the image. These failures are sporadic and extremely inconsistent. To alleviate the issue, driver application steps have been completely reworked to utilise DISM prior to the first boot into Windows instead of using an EXE package after or the unattend xml to apply drivers.
+**New Driver Pack:** Hewlett-Packard ProDesk 600 G3 <br>
+>The HP ProBook 600 G3 can now be built to Windows 10.
 
-Given the significant change this introduces, as well as newer drivers, please report any suspected issues as soon as possible.
-
-The new process requires repackaging all drivers. So far the following models have been completed. Any other models will continue to use existing methods.
-
-- Hewlett Packard EliteDesk 800 G1*
-- Hewlett Packard EliteDesk 800 G2
-- Hewlett Packard EliteDesk 800 G3
-- Hewlett Packard Elite X2 1012 G1
-- Hewlett Packard EliteBook x360 1030 G2
-- Hewlett Packard ProBook 650 G3
-
-**New Driver Pack:** Hewlett-Packard ProDesk 600 G3
+**Feature Changes:** <br>
+>- Due to space constraints, USMT data will now only be stored for seven (7) days following a successful migration. Please ensure you confirm data is restored within this period.
 
 **Fixes**
-- USMT will now use a Network Access Account if it fails to connect to a State Migration Point
-- Fixed an issue where USMT would fail when non-standard local accounts were present. USMT will now recreate any local accounts and restore data to those accounts. The account will be disabled and will need to be re-enabled and have its password reset prior to use.
+>- USMT will now use a Network Access Account if it fails to connect to a State Migration Point.
+>- Fixed an issue where USMT would fail when non-standard local accounts were present. USMT will now recreate any local accounts and restore data to those accounts. The account will be disabled and will need to be re-enabled and have its password reset prior to use.
+>- Fixed an issue where deployment source would be pulled from the Melbourne distribution point regardless of device location.
+>- Fixed an issue where AD Group Migration would run twice under certain scenarios.
+>- Corrected a permissions issue in the Build UI feature.
+>- Corrected a permissions issue in the AD Group Migration feature.
+>- Corrected a permissions issue an the Error Logging scenario.
+>- Cleaned up task sequence steps and removed deprecated features.
+
+### **Drivers**
+
+>The new driver application feature requires repackaging all drivers. Please see driver package details below. Any other models will continue to use existing methods and will be migrated at a later date.
+<center>
+
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Hewlett-Packard | EliteDesk 800 | G1 | sp69541<sup>^ | 2014-10-19
+> |  |  | G2 | sp81982 | 2017-10-16
+> |  |  | G3 | sp85276 | 2018-02-20
+> |  | ProDesk 800 | G3 | sp85276 | 2018-02-20
+> |  | Elite X2 1012 | G1 | sp83806 | 2017-11-18
+> |  | EliteBook x360 1030 | G2 | sp84730 | 2018-01-16
+> |  | EliteBook 840 | G3 | sp84739 | 2018-01-16
+> |  |  | G4 | sp84737 | 2018-01-16
+> |  | ProBook 640 | G3 | sp84732 | 2018-01-16
+> |  | EliteOne 800 | G1 | sp69541<sup>^ | 2014-10-19
+> |  |  | G2 | sp85475 | 2018-02-20
+> |  |  | G3 | sp85276 | 2018-02-20
+> |  | EliteBook Revolve 810 | G3 | sp79221 | 2017-02-24
+> Lenovo | ThinkCentre M700 | - | tc_m700 | 2016-12-21
+> |  | ThinkCentre M800 | - | tc_m800 | 2016-12-21
+> |  | ThinkCentre M900 | - | tc_m900 | 2016-12-21
+>^ Drivers are not available for Windows 10. Windows 8 / 8.1 drivers have been used.
+</center>
 
 
 # Minor Update - 4.3.1
