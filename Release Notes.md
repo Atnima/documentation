@@ -1,29 +1,49 @@
-# Major Update - 4.4.0
+# Major Update - 5.0.0
 
-**New Feature:** Driver application using Deployment Image Servicing and Management <br>
->There have been a number of failures reported due to the way drivers are applied during the image. These failures are sporadic and extremely inconsistent. To alleviate the issue, driver application steps have been completely reworked to utilise DISM prior to the first boot into Windows instead of using an EXE package or the unattend xml to apply drivers.<br><br>Given the significant change this introduces, as well as newer driver versions, please report any suspected issues as soon as possible. SVMHS Windows 7 Builds will continue to use the existing process until a future release.
+**New Infrastructure:** Melbourne Distribution Point
+
+>To assist with the deployment of USMT a new Distribution Point has been commissioned in Melbourne. If you notice any issues please let me know.
+
+**New Feature:** Driver application using Deployment Image Servicing and Management (DISM)<br>
+>There have been a number of failures reported due to the way drivers are applied during the image. These failures are sporadic and extremely inconsistent. To alleviate the issue, driver application steps have been completely reworked to utilise DISM prior to the first boot into Windows instead of using an EXE package or the unattend xml (inbuilt functionality) to apply drivers.<br><br>Given the significant change this introduces, as well as newer driver versions, please report any suspected issues as soon as possible.
 
 **New Driver Pack:** Hewlett-Packard ProDesk 600 G3 <br>
 >The HP ProBook 600 G3 can now be built to Windows 10.
 
-**Feature Changes:** <br>
->- Due to space constraints, USMT data will now only be stored for seven (7) days following a successful migration. Please ensure you confirm data is restored within this period.
+**Changes:** <br>
+>- **IMPORTANT:** Due to space constraints, USMT data will now only be stored for seven (7) days following a successful migration. Please ensure you confirm data has been restored successfully within this period. <sup> ^
+>- Windows 10 1607 has now been deprecated and is no longer available under the 'Development Options' screen.
+>- Updated SCCM Service start behaviour to significantly improve performance.
+>- Cleaned up task sequence steps and removed deprecated features.
+>- Removed deprecated "Domain Join Workaround" behaviour related to Windows 10 1607 installs.
+>- Updated SVHB Boundary to include newly created DHCP range.<sup>^ (Credit: Brendan Vanderstam)
+>- Cleaned up a number of WMI queries within the OSD to improve performance.
+>- Improved build speed across Windows 7 and 10 by removing restarts no longer needed with the addition of the new driver application model.
+>- Modified offline registry files to prevent a device from trying to connect to Windows Update during OOBE.
 
 **Fixes**
 >- USMT will now use a Network Access Account if it fails to connect to a State Migration Point.
->- Fixed an issue where USMT would fail when non-standard local accounts were present. USMT will now recreate any local accounts and restore data to those accounts. The account will be disabled and will need to be re-enabled and have its password reset prior to use.
->- Fixed an issue where deployment source would be pulled from the Melbourne distribution point regardless of device location.
+>- Fixed an issue where USMT would fail when non-standard local accounts were present. 
+>   - USMT will now recreate any local accounts in a disabled state and restore data to those accounts. The account will need to be re-enabled and have its password reset prior to use.
+>- Fixed an issue where deployment files would be sourced from the Melbourne distribution point regardless of device location. <sup>^
 >- Fixed an issue where AD Group Migration would run twice under certain scenarios.
 >- Corrected a permissions issue in the Build UI feature.
 >- Corrected a permissions issue in the AD Group Migration feature.
->- Corrected a permissions issue an the Error Logging scenario.
->- Cleaned up task sequence steps and removed deprecated features.
+>- Corrected a permissions issue during an Error Logging scenario.
+>- Fixed an issue where some devices would fail when applying certain application packages during OSD citing an 'unspecified error'.
+>- Fixed an issue where some devices were not loading drivers correctly.
+>- Fixed an issue where significant delays in loading drivers caused components and peripherals to be unresponsive.
+
+>^ <sup>Indicates change or fix went live just prior to this update.  
+
 
 ### **Drivers**
 
->The new driver application feature requires repackaging all drivers. Please see driver package details below. Any other models will continue to use existing methods and will be migrated at a later date.
-<center>
-
+>The new driver application feature required a repackaging of all drivers. Please see migrated driver package details below including the date of release by the vendor. Due to the complexity of the change some drivers have not been migrated and are listed later in the notes.
+><center> <b>
+>Windows 10
+></center> </b>
+>
 >Manufacturer | Model | Generation | Driver Pack | Driver Date 
 > :--- | :--- | :---: | :---: | :---: |
 >Hewlett-Packard | EliteDesk 800 | G1 | sp69541<sup>^ | 2014-10-19
@@ -38,12 +58,45 @@
 > |  | EliteOne 800 | G1 | sp69541<sup>^ | 2014-10-19
 > |  |  | G2 | sp85475 | 2018-02-20
 > |  |  | G3 | sp85276 | 2018-02-20
-> |  | EliteBook Revolve 810 | G3 | sp79221 | 2017-02-24
+> |  | Compaq Elite 8300 | - | sp60420 | 2013-01-10
 > Lenovo | ThinkCentre M700 | - | tc_m700 | 2016-12-21
 > |  | ThinkCentre M800 | - | tc_m800 | 2016-12-21
 > |  | ThinkCentre M900 | - | tc_m900 | 2016-12-21
->^ Drivers are not available for Windows 10. Windows 8 / 8.1 drivers have been used.
-</center>
+>^ <sup>Drivers are not available for Windows 10. Windows 8 / 8.1 drivers have been used. <br>
+>
+><center> <b>
+>Windows 7
+></center> </b>
+>
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Hewlett-Packard | EliteDesk 800 | G1 | sp69540 | 2014-10-29
+> |  |  | G2 | sp85469 | 2018-02-14
+> |  |  | G3 | sp85281 | 2018-02-02
+> |  | Compaq Elite 8300 | - | sp61385 | 2013-04-03
+> |  | ProBook 650 | G1 | sp66432 | 2014-05-20
+> |  |  | G2 | sp82348 | 2017-10-18
+> |  | EliteBook 820 | G1 | sp66432 | 2014-05-20
+> |  |  | G2 | sp70143 | 2014-12-17
+> |  |  | G3 | sp82346 | 2017-12-05
+> |  | EliteBook 840 | G2 | sp70143 | 2014-12-17
+> |  |  | G3 | sp82346 | 2017-12-05
+> |  | EliteBook 850 | G2 | sp70143 | 2014-12-17
+> |  |  | G3 | sp82346 | 2017-12-05
+> |  | z240 Workstation | - | sp82547 | 2017-11-14
+
+>The following drivers **have not** been migrated. If you need to rebuild any of these devices please get in touch prior. I will work on having these included in a future release.
+>- Lenovo ThinkPad T460s
+>- Lenovo ThinkPad X1
+>- Lenovo ThinkPad Yoga 370
+>- Lenovo ThinkStation P300
+
+**Known Issues** <br>
+>**GSSO Distribution Point Failures**
+><br>Impact - *Consistent // Medium*
+><br>Due to an outage with the GSSO File/Print server during development and test, the OSD task sequence currently will not run from any site running off the NSW Group Office distribution point (William Street) until the driver packages can be distributed to it. This will be done as soon as is practical.
+
+--------------------------------
 
 
 # Minor Update - 4.3.1
