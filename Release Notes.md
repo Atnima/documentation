@@ -20,6 +20,9 @@
 >- Cleaned up a number of WMI queries within the OSD to improve performance.
 >- Improved build speed across Windows 7 and 10 by removing restarts no longer needed with the addition of the new driver application model.
 >- Modified offline registry files to prevent a device from trying to connect to Windows Update during OOBE.
+>- Active Directory Group Migration has left BETA!
+>- Streamlined UI steps to be universal between OS initiated and PXE/USB initiated builds.
+>- Significant modifications to the UI configuration XML to remove deprecated features and improve readability.
 
 **Fixes**
 >- USMT will now use a Network Access Account if it fails to connect to a State Migration Point.
@@ -90,6 +93,21 @@
 >- Lenovo ThinkPad X1
 >- Lenovo ThinkPad Yoga 370
 >- Lenovo ThinkStation P300
+
+**Benchmarks - Build Times** <br>
+> Hewlett-Packard EliteDesk 800 G2 Mini <br>
+> Intel Core i5-6500T CPU @ 2.50GHz // 4GB RAM // 500GB HDD (Spindle)
+> 
+> 4.3.1 <br>
+> Windows 10: <br>
+> Windows 7:
+> 
+> 5.0.0 <br>
+> Windows 10: <br>
+> Windows 7:
+>
+> <sup> Benchmarks gathered from the average of 3 builds across the course of a day. Build times will vary based on hardware, location and the link to the local distribution point
+
 
 **Known Issues** <br>
 >**GSSO Distribution Point Failures**
