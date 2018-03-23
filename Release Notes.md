@@ -1,8 +1,8 @@
 # Major Update - 5.0.0
 
-**New Infrastructure:** Melbourne Distribution Point
+**New Infrastructure:** Melbourne Distribution Point<sup>^
 
->To assist with the deployment of USMT a new Distribution Point has been commissioned in Melbourne. If you notice any issues please let me know.
+>To assist with the deployment of USMT a new Distribution Point has been commissioned in Melbourne. If there are any issues with OS or application deployment please get in touch.
 
 **New Feature:** Driver application using Deployment Image Servicing and Management (DISM)<br>
 >There have been a number of failures reported due to the way drivers are applied during the image. These failures are sporadic and extremely inconsistent. To alleviate the issue, driver application steps have been completely reworked to utilise DISM prior to the first boot into Windows instead of using an EXE package or the unattend xml (inbuilt functionality) to apply drivers.<br><br>Given the significant change this introduces, as well as newer driver versions, please report any suspected issues as soon as possible.
@@ -12,20 +12,22 @@
 
 **Changes:** <br>
 >- **IMPORTANT:** Due to space constraints, USMT data will now only be stored for seven (7) days following a successful migration. Please ensure you confirm data has been restored successfully within this period. <sup> ^
+>- **IMPORTANT:** Windows 7 Builds for SVMHS are now achieved as a later prompt when selecting NSW as the location. Development options are now only required for non-standard names.
 >- Windows 10 1607 has now been deprecated and is no longer available under the 'Development Options' screen.
 >- Updated SCCM Service start behaviour to significantly improve performance.
 >- Cleaned up task sequence steps and removed deprecated features.
 >- Removed deprecated "Domain Join Workaround" behaviour related to Windows 10 1607 installs.
 >- Updated SVHB Boundary to include newly created DHCP range.<sup>^ (Credit: Brendan Vanderstam)
->- Cleaned up a number of WMI queries within the OSD to improve performance.
->- Improved build speed across Windows 7 and 10 by removing restarts no longer needed with the addition of the new driver application model.
+>- Optimised up a number of WMI queries within the OSD to improve performance.
+>- Improved build speed by removing restarts no longer needed with the addition of the new driver application model.
 >- Modified offline registry files to prevent a device from trying to connect to Windows Update during OOBE.
->- Active Directory Group Migration has left BETA!
->- Streamlined UI steps to be universal between OS initiated and PXE/USB initiated builds.
+>- UI steps are now universal between OS initiated and PXE/USB initiated builds.
 >- Significant modifications to the UI configuration XML to remove deprecated features and improve readability.
-
-**Fixes**
+>- Added the ability to choose between the MaterSyd and SVMHS domains for Windows 7.<sup># 
+>- Active Directory Group Migration has left BETA! <br>
 >- USMT will now use a Network Access Account if it fails to connect to a State Migration Point.
+
+**Fixes:**
 >- Fixed an issue where USMT would fail when non-standard local accounts were present. 
 >   - USMT will now recreate any local accounts in a disabled state and restore data to those accounts. The account will need to be re-enabled and have its password reset prior to use.
 >- Fixed an issue where deployment files would be sourced from the Melbourne distribution point regardless of device location. <sup>^
@@ -36,8 +38,10 @@
 >- Fixed an issue where some devices would fail when applying certain application packages during OSD citing an 'unspecified error'.
 >- Fixed an issue where some devices were not loading drivers correctly.
 >- Fixed an issue where significant delays in loading drivers caused components and peripherals to be unresponsive.
-
->^ <sup>Indicates change or fix went live just prior to this update.  
+>- Corrected outdated UI elements and branding.
+>
+>^ <sup> Change or fix went live just prior to this update. </sup><br>
+> <sup> # The computer object will be placed in the Workstations root and will need to be moved to specific location based OU's post build.
 
 
 ### **Drivers**
