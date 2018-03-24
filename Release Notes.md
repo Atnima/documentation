@@ -38,10 +38,11 @@
 >- Fixed an issue where some devices would fail when applying certain application packages during OSD citing an 'unspecified error'.
 >- Fixed an issue where some devices were not loading drivers correctly.
 >- Fixed an issue where significant delays in loading drivers caused components and peripherals to be unresponsive.
+>- Fixed missing Bluetooth driver on 800 G3 AiO devices.
 >- Corrected outdated UI elements and branding.
 >
->^ <sup> Change or fix went live just prior to this update. </sup><br>
-> <sup> # The computer object will be placed in the Workstations root and will need to be moved to specific location based OU's post build.
+> <sup>^ Change or fix went live just prior to this update. </sup><br>
+> <sup># The computer object will be placed in the Workstations root and will need to be moved to specific location based OU's post build.
 
 
 ### **Drivers**
