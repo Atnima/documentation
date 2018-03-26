@@ -40,14 +40,15 @@
 >- Fixed an issue where significant delays in loading drivers caused components and peripherals to be unresponsive.
 >- Fixed missing Bluetooth driver on 800 G3 AiO devices.
 >- Corrected outdated UI elements and branding.
->
-> <sup>^ Change or fix went live just prior to this update. </sup><br>
-> <sup># The computer object will be placed in the Workstations root and will need to be moved to specific location based OU's post build.
+
+ <sup>^ Change or fix went live just prior to this update. </sup><br>
+ <sup># The computer object will be placed in the Workstations root and will need to be moved to specific location based OU's post build.
 
 
 ### **Drivers**
 
 >The new driver application feature required a repackaging of all drivers. Please see migrated driver package details below including the date of release by the vendor. Due to the complexity of the change some drivers have not been migrated and are listed later in the notes.
+
 ><center> <b>
 >Windows 10
 ></center> </b>
@@ -71,7 +72,7 @@
 > |  | ThinkCentre M800 | - | tc_m800 | 2016-12-21
 > |  | ThinkCentre M900 | - | tc_m900 | 2016-12-21
 >^ <sup>Drivers are not available for Windows 10. Windows 8 / 8.1 drivers have been used. <br>
->
+
 ><center> <b>
 >Windows 7
 ></center> </b>
@@ -98,21 +99,6 @@
 >- Lenovo ThinkPad X1
 >- Lenovo ThinkPad Yoga 370
 >- Lenovo ThinkStation P300
-
-**Benchmarks - Build Times** <br>
-> Hewlett-Packard EliteDesk 800 G2 Mini <br>
-> Intel Core i5-6500T CPU @ 2.50GHz // 4GB RAM // 500GB HDD (Spindle)
-> 
-> 4.3.1 <br>
-> Windows 10: <br>
-> Windows 7:
-> 
-> 5.0.0 <br>
-> Windows 10: <br>
-> Windows 7:
->
-> <sup> Benchmarks gathered from the average of 3 builds across the course of a day. Build times will vary based on hardware, location and the link to the local distribution point
-
 
 **Known Issues** <br>
 >**GSSO Distribution Point Failures**
