@@ -1,3 +1,49 @@
+# Minor Update - 5.1.0
+
+**New Feature:** Data#3 UI Skip
+
+> To assist Data#3 with the large volume of rebuilds required at their site, the UI will be skipped for any builds kicked off on their subnet. 
+>
+> For SVHA stes, this currently presents as a powershell window that should exit after a brief period and will continue on to display the UI.
+>
+> For Data#3 the script will set the options usually collected during the UI and check the BIOS has been set to a standard asset tag format.
+
+**New Feature:** App Install Script
+
+> To assist with apps that fail to install cleanly using an unattended installation within SCCM, a script has been written to install these apps while allowing error information to show for technicians. This will intially be used to assist with the sporadic Java failures.
+>
+> This is currently only live for Windows 10 as time constraints have prevented testing on Windows 10. This will be added to Windows 7 in a future update.
+
+**New Driver Packs**
+
+> The HP ProBook 650 G2, Lenovo ThinkPad T460S and Microsoft Surface Book can now be built to Windows 10.
+>
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Microsoft | Surface Book | - | surfacebook_win10_16299 | 2018-01-01
+>Hewlett-Packard | ProBook 650 | G2 | sp84740 | 2018-01-16
+>Lenovo | ThinkPad T460S | - | tp_t460s | 2017-11-13
+
+**April Patches**
+
+> April 2018 patches have been applied to both the Windows 10 and 7 images.
+>
+> These images wil go live tomorrow 17 April 2018.
+
+**Fixes:**
+
+> - Further changes to fix an issue with USMT where it would fail to connect to a state store.
+> - Fixed missing Bluetooth and LTE drivers in EliteBook x360 1030 driver pack.
+> - Further changes to mitigate an issue where Java fails to install during the task sequence.
+> - Temporarily resolved known issue in 5.0.0 caused by the failure of the GSSO File/Print server.
+> - Resolved missing entry possibility for device name (CPQ##-M###).
+> - Removed PXE password for Data#3 site to assist device builds.
+
+<br>
+
+--------------------------------
+
+
 # Major Update - 5.0.0
 
 **New Infrastructure:** Melbourne Distribution Point<sup>^
