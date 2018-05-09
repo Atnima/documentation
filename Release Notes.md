@@ -1,3 +1,66 @@
+# Driver Release - 5.1.4
+
+**Updated Boot Image**
+> A boot image update will go live tonight to accomodate PXE booting the z440 Workstations which were made available in 5.1.2.
+>
+> This update will mean a new version of the boot image is required. Please source the latest boot image from the following location tomorrow morning and update any USB's you have.
+>
+> \\\sccm-pr9-01\temp$\
+> Image name: SVHA-Builds_5.1.4.iso
+
+**New Windows 10 Drivers**
+>
+> The following devices can now be built to Windows 10.
+>
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Microsoft | Surface Book 2 | - | surfacebook_win10_16299 | 2018-01-01
+
+**New Windows 7 Drivers**
+>
+> The following devices can now be built to Windows 7
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Hewlett-Packard | ProOne 600 | G3 | sp85281 | 2018-02-02
+<br>
+
+--------------------------------
+
+# Bug Fix Release - 5.1.3
+
+**Fixes:**
+
+> - Restored functionality lost in a previous release (4.3.0) where St Vincent's Private Hospital Melbourne devices would be moved to an alternate OU. <br> 
+> <sup> Credit: Aalap Gandhi - Thank you for reminding me
+> - Improved BitLocker activation steps during build to only apply to required devices.
+
+<br>
+
+--------------------------------
+
+# Driver Release - 5.1.2
+
+> The following devices can now be built to Windows 10.
+>
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Hewlett-Packard | z440 Workstation | - | sp84798 | 2018-02-21
+
+<br>
+
+--------------------------------
+
+# Bug Fix Release - 5.1.1
+
+**Fixes:**
+
+> - Fixed an issue preventing Surface Pro driver MSI's from installing <br> 
+> <sup> Credit: Aalap Gandhi - Thank you for catching this
+
+<br>
+
+--------------------------------
+
 # Minor Update - 5.1.0
 
 **New Feature:** Data#3 UI Skip
@@ -12,23 +75,23 @@
 
 > To assist with apps that fail to install cleanly using an unattended installation within SCCM, a script has been written to install these apps while allowing error information to show for technicians. This will intially be used to assist with the sporadic Java failures.
 >
-> This is currently only live for Windows 10 as time constraints have prevented testing on Windows 10. This will be added to Windows 7 in a future update.
+> This is currently only live for Windows 10 as time constraints have prevented testing on Windows 7. This will be added to Windows 7 in a future update.
 
 **New Driver Packs**
 
-> The HP ProBook 650 G2, Lenovo ThinkPad T460S and Microsoft Surface Book can now be built to Windows 10.
+> The following devices can now be built to Windows 10.
 >
 >Manufacturer | Model | Generation | Driver Pack | Driver Date 
 > :--- | :--- | :---: | :---: | :---: |
 >Microsoft | Surface Book | - | surfacebook_win10_16299 | 2018-01-01
 >Hewlett-Packard | ProBook 650 | G2 | sp84740 | 2018-01-16
+> | | z240 Workstation | - | sp84799 | 2018-02-21
 >Lenovo | ThinkPad T460S | - | tp_t460s | 2017-11-13
 
 **April Patches**
 
 > April 2018 patches have been applied to both the Windows 10 and 7 images.
->
-> These images wil go live tomorrow 17 April 2018.
+
 
 **Fixes:**
 
@@ -36,7 +99,7 @@
 > - Fixed missing Bluetooth and LTE drivers in EliteBook x360 1030 driver pack.
 > - Further changes to mitigate an issue where Java fails to install during the task sequence.
 > - Temporarily resolved known issue in 5.0.0 caused by the failure of the GSSO File/Print server.
-> - Resolved missing entry possibility for device name (CPQ##-M###).
+> - Resolved missing regex check for device name (CPQ##-M###).
 > - Removed PXE password for Data#3 site to assist device builds.
 
 <br>
