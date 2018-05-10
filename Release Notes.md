@@ -1,3 +1,24 @@
+# Minor Update - 5.2.0
+
+**New Feature: Surface Pro Asset Tag**
+> The Microsoft Asset Tag utility has been incorporated into the build. This will set the asset tag in the BIOS if it hasn't already been set.
+>
+> This features comes in the form of a new script that will trigger when building a Surface Pro device, if the BIOS is already set it will terminate without action. If the BIOS has not been set or is set correctly it will prompt for the 6 digit asset tag, set the value in the BIOS and then trigger a reboot to apply.
+>
+>*Note:* This *requires* the use of the standard asset tag format.
+
+**Changes:**
+> - Re-write the build scripts into a single PS1 file with swicthes for easier maintenace.
+> - Scrips are now called via UNC share rather than SCCM package improving performance and compatibility.
+
+**Fixes:**
+
+> - 
+
+<br>
+
+--------------------------------
+
 # Bug Fix Release - 5.1.5
 
 **Fixes:**
