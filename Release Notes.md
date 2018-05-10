@@ -1,3 +1,14 @@
+# Bug Fix Release - 5.1.5
+
+**Fixes:**
+
+> - Updated I219-LM drivers (12.17.8.7 - 29/09/2017) for ProDesk 600 G3 devices to resolve an issue with network disconnections.
+> <br><sup> Credit: Brenden Vanderstam
+
+<br>
+
+--------------------------------
+
 # Driver Release - 5.1.4
 
 **Updated Boot Image**
