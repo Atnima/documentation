@@ -1,19 +1,54 @@
-# Minor Update - 5.2.0
+# Major Update - 6.0.0
+**Boot Image Version: 6.0.0** <br>
+\\\sccm-pr9-01\temp$\SVHABootImage_6.0.0.iso
 
-**New Feature: Surface Pro Asset Tag**
-> The Microsoft Asset Tag utility has been incorporated into the build. This will set the asset tag in the BIOS if it hasn't already been set.
+**WinPE Build Script**
+> A new WinPE script has been developed to replace the UI present at the beginning of the build. This script, while being a little less pretty, incorporates a number of scripts from within the build.
 >
-> This features comes in the form of a new script that will trigger when building a Surface Pro device, if the BIOS is already set it will terminate without action. If the BIOS has not been set or is set correctly it will prompt for the 6 digit asset tag, set the value in the BIOS and then trigger a reboot to apply.
+> This new script brings with it the following features:
+> - Surface Pro asset tagging (more below)
+> - Automated building of Surface Pro devices allowing builds to be completed at Data#3
+> - Removed the need for adding devices to a group to rebuild them
 >
->*Note:* This *requires* the use of the standard asset tag format.
+> **Please Note**: *This release brings with it a significant change in versioning as boot images now contain critical components. When a new update is released, the notes will contain both a task sequence version and a boot image version. If you use a USB please ensure your boot image is the correct version when new ones are released. PXE boot images will update automatically.* 
 
-**Changes:**
-> - Re-write the build scripts into a single PS1 file with swicthes for easier maintenace.
-> - Scrips are now called via UNC share rather than SCCM package improving performance and compatibility.
+**New Feature: Surface Asset Tag Utility**
+> The Microsoft Asset Tag utility has been incorporated into the build. This will set the asset tag in the BIOS for Surface Pro devices if it hasn't already been set.
 
-**Fixes:**
+**New Feature: Windows 10 1803**
+> Windows 10 Version 1803 has been added to the task sequence for testing. <br>
+> Watch this space...
 
-> - 
+**Changes**
+> - All Windows 10 laptops will now be added to the AD groups required for Direct Access during build.
+> - Windows 7, Windows 10 1709 and Windows 10 1803 images updated with July security updates.
+
+
+**Fixes**
+> - Resolved an issue with chassis types 13 (all-in-one) and 31 (convertible) when building from Data#3
+> - Removed an unintended step in Windows 7 builds that could cause build failures if the planets all aligned.
+
+**New Windows 10 Drivers**
+>
+> The following devices can now be built to Windows 10.
+>
+>Manufacturer | Model | Generation | Driver Pack | Driver Date 
+> :--- | :--- | :---: | :---: | :---: |
+>Hewlett-Packard | EliteBook 840 | G5 | sp87003 | 2018-03-27
+> | | ProBook 450 | G4 | sp87414 | 2017-07-02
+> | | ProBook 470 | G5 | sp84239 | 2017-12-14
+> | | Z2 Mini Workstation | G3 | sp87516 | 2018-05-09
+
+<br>
+
+--------------------------------
+
+
+# Minor Release - 5.1.6
+
+**Changes**
+> - Changed default timezone for Data#3 to AEST.
+> - Increased timezone wait period from 10 seconds to 20.
 
 <br>
 
